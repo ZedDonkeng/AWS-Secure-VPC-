@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="AWS VPC across two availability zones with public and private subnets, NAT gateway and internet gateway">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M1 1 L8 4 L1 7" fill="none" stroke="#356d9b" stroke-width="2"/></marker></defs>
+<rect width="1200" height="720" fill="#f7f9fc"/>
+<text x="60" y="50" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#172a43">Secure Multi-Tier AWS VPC Architecture</text>
+<text x="60" y="79" font-family="Arial,sans-serif" font-size="16" fill="#64748b">AWS Region: us-east-1   |   VPC CIDR: 10.0.0.0/16   |   Two Availability Zones</text>
+<rect x="58" y="184" width="1084" height="469" rx="16" fill="white" stroke="#486c97" stroke-width="3"/>
+<text x="79" y="219" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#1f4770">Amazon VPC · 10.0.0.0/16</text>
+<rect x="78" y="240" width="510" height="370" rx="12" fill="#f5f9ff" stroke="#9ab4d4" stroke-width="2"/>
+<rect x="612" y="240" width="510" height="370" rx="12" fill="#f5f9ff" stroke="#9ab4d4" stroke-width="2"/>
+<text x="98" y="272" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#284f7d">Availability Zone A</text>
+<text x="632" y="272" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#284f7d">Availability Zone B</text>
+<rect x="99" y="291" width="468" height="129" rx="12" fill="#e9f7f1" stroke="#259967" stroke-width="2"/>
+<rect x="633" y="291" width="468" height="129" rx="12" fill="#e9f7f1" stroke="#259967" stroke-width="2"/>
+<rect x="99" y="447" width="468" height="134" rx="12" fill="#f1efff" stroke="#7869c9" stroke-width="2"/>
+<rect x="633" y="447" width="468" height="134" rx="12" fill="#f1efff" stroke="#7869c9" stroke-width="2"/>
+<g font-family="Arial,sans-serif" fill="#193247">
+<text x="119" y="320" font-size="19" font-weight="700">Public subnet A</text><text x="119" y="343" font-size="15">10.0.1.0/24</text><text x="119" y="373" font-size="16">Public EC2 / Bastion (lab)</text><text x="119" y="397" font-size="15" fill="#287553">NAT Gateway + Elastic IP</text>
+<text x="653" y="320" font-size="19" font-weight="700">Public subnet B</text><text x="653" y="343" font-size="15">10.0.3.0/24</text><text x="653" y="373" font-size="16">Public-tier capacity</text><text x="653" y="397" font-size="15" fill="#64748b">Second NAT Gateway: future enhancement</text>
+<text x="119" y="477" font-size="19" font-weight="700">Private subnet A</text><text x="119" y="502" font-size="15">10.0.2.0/24</text><text x="119" y="532" font-size="16">Private EC2 (no public IP)</text><text x="119" y="555" font-size="15" fill="#6555a8">Default route → NAT Gateway A</text>
+<text x="653" y="477" font-size="19" font-weight="700">Private subnet B</text><text x="653" y="502" font-size="15">10.0.4.0/24</text><text x="653" y="532" font-size="16">Private workloads (no public IP)</text><text x="653" y="555" font-size="15" fill="#6555a8">Lab route → NAT Gateway A</text>
+</g>
+<rect x="80" y="110" width="225" height="53" rx="10" fill="#deebfc" stroke="#356d9b" stroke-width="2"/><text x="102" y="142" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#284f7d">Internet</text>
+<rect x="423" y="110" width="339" height="53" rx="10" fill="#deebfc" stroke="#356d9b" stroke-width="2"/><text x="445" y="142" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#284f7d">Internet Gateway (IGW)</text>
+<path d="M305 137 H419" stroke="#356d9b" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M591 164 V183" stroke="#356d9b" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M351 420 V444" stroke="#7869c9" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M871 445 V424 H370" fill="none" stroke="#7869c9" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="65" y="687" font-family="Arial,sans-serif" font-size="15" fill="#52677d">Security boundaries: Security Groups (stateful) + Network ACLs (stateless) · Private instances are not directly internet-reachable</text>
+</svg>
